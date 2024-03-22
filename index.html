@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music play</title>
+    <link rel="icon" href="./css/img/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link>
+</head>
+<body>
+    <div class="player">
+        <!-- Dashboard -->
+        <div class="dashboard">
+          <!-- Header -->
+          <header>
+            <h4>Now playing:</h4>
+            <h2></h2>
+            <div class="switch-container">
+              <input type="checkbox" class="switch" id="themeSwitch" onclick="toggleTheme()">
+              <label for="" class="light">
+                  <i class="fa-regular fa-sun"></i>
+              </label>
+              <label for="" class="dark">
+                  <i class="fa-solid fa-moon"></i>
+              </label>
+            </div>
+            <h2></h2>
+          </header>
+      
+          <!-- CD -->
+          <div class="cd">
+            <div class="cd-thumb" style="background-image: url(./css/img/thumb-1.png)">
+            </div>
+          </div>
+      
+          <!-- Control -->
+          <div class="control">
+
+            <div class="btn btn-repeat">
+              <i class="fas fa-redo"></i>
+            </div>
+
+            <div class="btn btn-prev">
+              <i class="fas fa-step-backward"></i>
+            </div>
+
+            <div class="btn btn-toggle-play">
+              <i class="fas fa-pause icon-pause"></i>
+              <i class="fas fa-play icon-play"></i>
+            </div>
+
+            <div class="btn btn-next">
+              <i class="fas fa-step-forward"></i>
+            </div>
+
+            <div class="btn btn-random">
+              <i class="fas fa-random"></i>
+            </div>
+            
+          </div>
+      
+          <!-- <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100"> -->
+          <!-- progress -->
+          <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100" />
+          <div class="times">
+              <div class="time-left">00:00</div>
+              <div class="time-right"></div>
+          </div>
+
+          <!-- volume -->
+          
+          <span id="volumeIcon">
+            <i class="fa-solid fa-volume-high"></i>
+          </span>
+
+          <div id="volumeBar">
+            <label for="volume">Volume:</label>
+            <input type="range" id="volume" name="volume" min="0" max="100" value="50" oninput="changeVolume(this.value)">
+          </div>
+
+
+          <!-- audio -->
+          <audio id="audio" src=""></audio>
+        </div>
+      
+        <!-- Playlist -->
+        <div class="playlist">
+          <div class="song">
+              <div class="thumb" style="background-image: url(./css/img/thumb-2.jpg);"></div>
+              <div class="body">
+                  <h3 class="title">Song title</h3>
+                  <p class="author">Singer/ band</p>
+              </div>
+              <div class="option">
+                  <i class="fas fa-ellipsis-h"></i>
+              </div>
+          </div>
+      </div>
+    </div>
+  
+    
+  
+      
+
+      <script src="./app.js"></script>
+        
+</body>
+</html>

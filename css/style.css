@@ -1,0 +1,296 @@
+:root {
+    --primary-color: #ec1f55;
+    --text-color: #333;
+    --white-color: #fff;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+  
+  body {
+    background-color: mediumspringgreen;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    /* Additional styling */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .player {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  
+  .player .icon-pause {
+    display: none;
+  }
+  
+  .player.playing .icon-pause {
+    display: inline-block;
+  }
+  
+  .player.playing .icon-play {
+    display: none;
+  }
+  
+  .dashboard {
+    padding: 16px 16px 14px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 480px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  .switch-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 16px;
+  }
+  
+  .switch {
+    appearance: none;
+    width: 45px;
+    height: 24px;
+    border-radius: 999px;
+    background-color: #d3d3d3;
+    cursor: pointer;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .switch::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--while-color);
+  
+    transition: left 0.1s;
+  }
+  
+  .switch:checked::after {
+    left: 23px;
+    background-color: var(--blue-navy);
+  }
+  
+  .switch:checked ~ .light {
+    display: none;
+  }
+  
+  .switch:checked ~ .dark {
+    display: block;
+  }
+  
+  .light {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6px;
+    font-size: 12px;
+    color: #ffd700;
+  }
+  
+  .dark {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    right: 7px;
+    color: var(--while-color);
+  }
+  
+  /* HEADER */
+  header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  header h4 {
+    color: var(--primary-color);
+    font-size: 12px;
+  }
+  
+  header h2 {
+    color: var(--text-color);
+    font-size: 20px;
+  }
+  
+  /* CD */
+  .cd {
+    display: flex;
+    margin: auto;
+    width: 200px;
+  }
+  
+  .cd-thumb {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    background-size: cover;
+    margin: auto;
+  }
+  
+  /* CONTROL */
+  .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 0 8px 0;
+  }
+  
+  .control .btn {
+    color: #666;
+    padding: 18px;
+    font-size: 18px;
+  }
+  
+  .control .btn.active {
+    color: var(--primary-color);
+  }
+  
+  .control .btn-toggle-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1fec3a;
+  }
+  
+  .progress {
+    -webkit-appearance: none;
+    height: 6px;
+    width: 100%;
+    background-color: #d3d3d3;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.1s ease;
+  }
+  
+  .progress:hover {
+    height: 8px;
+  }
+  
+  .progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0px;
+    height: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: -400px 0 0 400px var(--primary-color);
+  }
+  
+  .times {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+
+  /* volume */
+ 
+
+/* Style to display elements inline */
+#volumeIcon,
+#volumeBar {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#volumeIcon i {
+  /* Assuming you're using Font Awesome for icons */
+  font-size: 24px; /* Adjust the size as needed */
+  /* Additional styles for the icon */
+}
+
+#volumeBar label {
+  margin-right: 10px; /* Adjust spacing between label and range input */
+}
+
+  
+  /* PLAYLIST */
+  .playlist {
+    margin-top: 408px;
+    padding: 30px;
+  }
+  
+  .song {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .song.active {
+    background-color: var(--primary-color);
+  }
+  
+  .song:active {
+    opacity: 0.8;
+  }
+  
+  .song.active .option,
+  .song.active .author,
+  .song.active .title {
+    color: #fff;
+  }
+  
+  .song .thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 8px;
+  }
+  
+  .song .body {
+    flex: 1;
+    padding: 0 16px;
+  }
+  
+  .song .title {
+    font-size: 18px;
+    color: var(--text-color);
+  }
+  
+  .song .author {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .song .option {
+    padding: 16px 8px;
+    color: #999;
+    font-size: 18px;
+  }
+  
